@@ -633,17 +633,17 @@ function toggleMobileNav() {
    ============================================================ */
 function goTo(page) {
   const map = {
-    home: "Index.html",
-    projects: "Projects.html",
-    about: "About.html",
-    contact: "Contact.html",
+    home: "/Public/Index.html",
+    projects: "/Public/Projects.html",
+    about: "/Public/About.html",
+    contact: "/Public/Contact.html",
   };
   if (map[page]) window.location.href = map[page];
 }
 
 function goToProject(id) {
   sessionStorage.setItem("gd_project_id", id);
-  window.location.href = "Project-detail.html?id=" + id;
+  window.location.href = "/Public/Project-detail.html?id=" + id;
 }
 
 /* ============================================================
