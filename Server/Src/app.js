@@ -7,7 +7,9 @@ const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://giant-designs.vercel.app"
+}));
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
