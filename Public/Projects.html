@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giant Designs — Designing Spaces, Building Dreams</title>
+<link rel="icon" href="/Assets/Imgs/Logo/logo.jpeg">
+<meta name="description" content="Giant Designs — Nigerian architectural practice by Ezeugwu Tochukwu David. Residential and commercial architecture rooted in cultural identity and lasting value." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css" />
+<link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+
+<!-- =====================================================
+NAV BAR
+===================================================== -->
+    <nav class="nav" id="main-nav">
+    <div class="nav-logo" data-page="home">
+    <div class="nav-logo-mark">
+        <i class="ti ti-building-arch" aria-hidden="true"></i>
+        <img src="/Assets/Imgs/Logo/logo.jpeg">
+    </div>
+    <div>
+        <div class="nav-logo-text">GIANT <em>designs</em></div>
+        <div class="nav-logo-sub">DESIGNING SPACES · BUILDING DREAMS</div>
+    </div>
+    </div>
+
+    <div class="nav-links">
+    <a href="Index.html">Home</a>
+    <a href="Projects.html" class="active">Projects</a>
+    <a href="About.html">About</a>
+    <a href="Contact.html">Contact</a>
+    </div>
+
+    <a href="Contact.html" class="nav-cta">Get in touch</a>
+</nav>
+
+
+<!-- =====================================================
+PAGE: PROJECTS
+===================================================== -->
+<main id="page-projects" class="page projects-page">
+
+    <div class="page-hero-dark" style="padding-top:7rem">
+    <div class="section-label">Portfolio — 2026 Edition</div>
+    <h1 class="section-title" style="color:#fff;font-size:30px;margin-top:6px">All projects</h1>
+    <p style="font-size:14px;color:#666;margin-top:8px;max-width:480px">Residential, commercial and healthcare architecture across Nigeria — from concept design to construction.</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs">
+    <button class="filter-tab active" data-filter="all" onclick="filterProjects('all')">All projects</button>
+    <button class="filter-tab" data-filter="residential" onclick="filterProjects('residential')">Residential</button>
+    <button class="filter-tab" data-filter="commercial" onclick="filterProjects('commercial')">Commercial</button>
+    <button class="filter-tab" data-filter="construction" onclick="filterProjects('construction')">Under construction</button>
+    </div>
+
+    <!-- Grid -->
+    <section class="section">
+    <div class="projects-full-grid" id="projects-grid">
+        <!-- Rendered by JS -->
+    </div>
+    </section>
+
+    <!-- Others: selected works -->
+    <section class="section" style="padding-top:0;border-top:0.5px solid #ece9e4;margin-top:0">
+    <div class="section-label" style="padding-top:2rem">Selected works</div>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Others</h2>
+    <p style="font-size:13px;color:#888;max-width:480px;margin-bottom:2rem">A collection of contemporary designs that reflect our commitment to innovation, functionality and aesthetic excellence.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM (1).jpeg"></div>
+        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (1).jpeg"></div>
+        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM.jpeg"></div>
+        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (2).jpeg"></div>
+        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM.jpeg"></div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div>
+      <div class="footer-brand">
+        GIANT <em>designs</em>
+      </div>
+
+      <div class="footer-tagline">
+        Designing Spaces, Building Dreams
+      </div>
+
+      <div style="margin-top:1rem;font-size:12px;color:#444;line-height:1.8">
+        Abuja · Enugu · Anambra, Nigeria
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-socials">
+
+        <a href="https://instagram.com/giant.designs" target="_blank">
+          <i class="ti ti-brand-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/2348036249792" target="_blank">
+          <i class="ti ti-brand-whatsapp"></i>
+        </a>
+
+        <a href="mailto:tochukwuezeugwu1@gmail.com">
+          <i class="ti ti-mail"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Pages -->
+    <div>
+      <div class="footer-col-title">Pages</div>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="Index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="Projects.html">Projects</a>
+        </li>
+
+        <li>
+          <a href="About.html">About</a>
+        </li>
+
+        <li>
+          <a href="Contact.html">Contact</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="footer-col-title">Contact</div>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="tel:+2348036249792">
+            +234 80 3624 9792
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:tochukwuezeugwu1@gmail.com">
+            tochukwuezeugwu1@gmail.com
+          </a>
+        </li>
+
+        <li>
+          <a href="https://instagram.com/giant.designs" target="_blank">
+            @giant.designs
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <div class="footer-copy">
+      © 2026 Giant Designs. All rights reserved.
+    </div>
+
+    <div style="font-size:11px;color:#333">
+      Design · Structure · Innovation
+    </div>
+
+  </div>
+
+</footer>
+
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>

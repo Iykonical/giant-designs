@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giant Designs — Designing Spaces, Building Dreams</title>
+<link rel="icon" href="/Assets/Imgs/Logo/logo.jpeg">
+<meta name="description" content="Giant Designs — Nigerian architectural practice by Ezeugwu Tochukwu David. Residential and commercial architecture rooted in cultural identity and lasting value." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css" />
+<link rel="stylesheet" href="./Style.css" />
+</head>
+<body>
+
+<!-- =====================================================
+NAV BAR
+===================================================== -->
+    <nav class="nav" id="main-nav">
+    <div class="nav-logo" data-page="home">
+    <div class="nav-logo-mark">
+        <i class="ti ti-building-arch" aria-hidden="true"></i>
+        <img src="/Assets/Imgs/Logo/logo.jpeg">
+    </div>
+    <div>
+        <div class="nav-logo-text">GIANT <em>designs</em></div>
+        <div class="nav-logo-sub">DESIGNING SPACES · BUILDING DREAMS</div>
+    </div>
+    </div>
+
+    <div class="nav-links">
+    <a href="Index.html">Home</a>
+    <a href="Projects.html" class="active">Projects</a>
+    <a href="About.html">About</a>
+    <a href="Contact.html">Contact</a>
+    </div>
+
+    <a href="Contact.html" class="nav-cta">Get in touch</a>
+</nav>
+
+
+<!-- =====================================================
+    PAGE: HOME
+    ===================================================== -->
+<main id="page-home" class="page">
+
+    <!-- Slidebar -->
+    <section class="hero">
+    <div class="hero-left">
+        <div>
+        <div class="hero-tag">Giant Designs — 2026</div>
+        <h1 class="hero-title">
+            Architecture<br>that <span>endures.</span>
+        </h1>
+        <p class="hero-desc">
+            A Nigerian architectural practice crafting residential and commercial spaces rooted in cultural identity, modern design, and lasting value.
+        </p>
+        <div class="hero-btns">
+            <button class="btn-primary" data-page="projects">View projects</button>
+            <button class="btn-outline-light" data-page="about">About us</button>
+        </div>
+        </div>
+        <div class="hero-stats">
+        <div>
+            <div class="stat-num">7+</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Under construction</div>
+        </div>
+        <div>
+            <div class="stat-num">4</div>
+            <div class="stat-label">States</div>
+        </div>
+        </div>
+    </div>
+    <div class="hero-right">
+
+    <div class="hero-img-placeholder">
+
+        <!-- Slide 1 -->
+        <div class="slide active">
+
+            <img class="hero-slide"
+                src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.37 PM (1).jpeg"
+                alt="Architecture 1">
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+                <span>Residential Architecture</span>
+                <h2>Modern African Living</h2>
+            </div>
+
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+
+            <img class="hero-slide"
+                src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (2).jpeg"
+                alt="Architecture 2">
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+                <span>Commercial Design</span>
+                <h2>Spaces That Inspire Business</h2>
+            </div>
+
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+
+            <img class="hero-slide"
+                src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM.jpeg"
+                alt="Architecture 3">
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+                <span>Luxury Structures</span>
+                <h2>Designing Timeless Experiences</h2>
+            </div>
+
+        </div>
+
+        <!-- Arrows -->
+        <button class="slide-btn prev">
+            <i class="ti ti-chevron-left"></i>
+        </button>
+
+        <button class="slide-btn next">
+            <i class="ti ti-chevron-right"></i>
+        </button>
+
+    </div>
+
+    <!-- Dots -->
+    <div class="hero-slider-dots">
+        <div class="slider-dot active"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+    </div>
+
+    </section>
+
+    <!-- Featured projects ticker -->
+    <div class="featured-bar" aria-hidden="true">
+    <span>Featured work</span>
+    <span class="sep">·</span>
+    <span>AKU — Wealth</span>
+    <span class="sep">·</span>
+    <span>ULO — Home</span>
+    <span class="sep">·</span>
+    <span>MADUBI — Mirror</span>
+    <span class="sep">·</span>
+    <span>TARE — Together</span>
+    <span class="sep">·</span>
+    <span>AHUIKE — Health</span>
+    <span class="sep">·</span>
+    <span>The Hanging Box</span>
+    </div>
+
+    <!-- Selected projects -->
+    <section class="section">
+    <div class="section-header">
+        <div>
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Selected projects</h2>
+        </div>
+        <a class="view-all-link" data-page="projects" href="Projects.html">
+        View all <i class="ti ti-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="projects-preview-grid" id="home-projects-grid">
+        <!-- Rendered by JS -->
+    </div>
+    </section>
+
+    <hr style="border:none;border-top:0.5px solid #ece9e4;margin:0 2.5rem" />
+
+    <!-- Services -->
+    <section class="section">
+    <div class="section-label">What we offer</div>
+    <h2 class="section-title">Our services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+        <div class="service-icon"><i class="ti ti-pencil-ruler" aria-hidden="true"></i></div>
+        <div class="service-title">Architectural design</div>
+        <p class="service-desc">Concept to working drawings — residential, commercial and healthcare facilities tailored to client needs.</p>
+        </div>
+        <div class="service-card">
+        <div class="service-icon"><i class="ti ti-cube-3d-sphere" aria-hidden="true"></i></div>
+        <div class="service-title">3D visualisation</div>
+        <p class="service-desc">Photorealistic renders and walkthroughs so you can experience your project before the first brick is laid.</p>
+        </div>
+        <div class="service-card">
+        <div class="service-icon"><i class="ti ti-building-factory" aria-hidden="true"></i></div>
+        <div class="service-title">Construction management</div>
+        <p class="service-desc">On-site supervision, tender management and project coordination to bring designs to life on time.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- About strip -->
+    <div class="about-strip">
+    <div>
+        <div class="section-label">Lead architect</div>
+        <h2 class="section-title">Ezeugwu Tochukwu David</h2>
+        <div style="font-size:12px;color:#c8a96e;text-transform:uppercase;letter-spacing:0.1em;margin:6px 0 1rem">Architect</div>
+        <p style="font-size:14px;color:#555;line-height:1.8">
+        A visionary architect committed to building spaces that reflect culture, prosperity and architectural excellence across Nigeria and beyond. Every project carries a name — and a meaning.
+        </p>
+        <a class="view-all-link" href="about.html" data-page="about" style="margin-top:1rem;display:inline-flex;color:#c8a96e">
+        Read full bio <i class="ti ti-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="about-strip-img">
+        <i class="ti ti-user" aria-hidden="true" style="font-size:40px;color:#bbb"></i>
+        <span style="font-size:11px;color:#aaa;letter-spacing:0.08em;text-transform:uppercase"><img src="/Assets/Imgs/Logo/Architect.jpeg" alt="Ezeugwu Tochukwu David"> photo</span>
+    </div>
+    </div>
+
+   <!-- Footer -->
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div>
+      <div class="footer-brand">
+        GIANT <em>designs</em>
+      </div>
+
+      <div class="footer-tagline">
+        Designing Spaces, Building Dreams
+      </div>
+
+      <div style="margin-top:1rem;font-size:12px;color:#444;line-height:1.8">
+        Abuja · Enugu · Anambra, Nigeria
+      </div>
+
+      <!-- Socials -->
+      <div class="footer-socials">
+
+        <a href="https://instagram.com/giant.designs" target="_blank">
+          <i class="ti ti-brand-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/2348036249792" target="_blank">
+          <i class="ti ti-brand-whatsapp"></i>
+        </a>
+
+        <a href="mailto:tochukwuezeugwu1@gmail.com">
+          <i class="ti ti-mail"></i>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Pages -->
+    <div>
+      <div class="footer-col-title">Pages</div>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="Index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="Projects.html">Projects</a>
+        </li>
+
+        <li>
+          <a href="About.html">About</a>
+        </li>
+
+        <li>
+          <a href="Contact.html">Contact</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="footer-col-title">Contact</div>
+
+      <ul class="footer-links">
+
+        <li>
+          <a href="tel:+2348036249792">
+            +234 80 3624 9792
+          </a>
+        </li>
+
+        <li>
+          <a href="mailto:tochukwuezeugwu1@gmail.com">
+            tochukwuezeugwu1@gmail.com
+          </a>
+        </li>
+
+        <li>
+          <a href="https://instagram.com/giant.designs" target="_blank">
+            @giant.designs
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <div class="footer-copy">
+      © 2026 Giant Designs. All rights reserved.
+    </div>
+
+    <div style="font-size:11px;color:#333">
+      Design · Structure · Innovation
+    </div>
+
+  </div>
+
+</footer>
+
+</main>
+
+<script src="./main.js"></script>
+</body>
+</html>
