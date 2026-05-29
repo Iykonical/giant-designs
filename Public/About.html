@@ -15,8 +15,8 @@
 <!-- =====================================================
 NAV BAR
 ===================================================== -->
-     <nav class="nav" id="main-nav">
-    <div class="nav-logo" data-page="home">
+       <nav class="nav" id="main-nav">
+    <div class="nav-logo" onclick="goTo('home')">
     <div class="nav-logo-mark">
         <i class="ti ti-building-arch" aria-hidden="true"></i>
         <img src="/Assets/Imgs/Logo/logo.jpeg">
@@ -27,15 +27,35 @@ NAV BAR
     </div>
     </div>
 
-    <div class="nav-links">
-    <a href="Index.html">Home</a>
-    <a href="Projects.html">Projects</a>
-    <a href="About.html"class="active" >About</a>
-    <a href="Contact.html">Contact</a>
-    </div>
+    <!-- Desktop links -->
+  <div class="nav-links">
+    <a href="/Public/Index.html" data-page="home">Home</a>
+    <a href="/Public/Projects.html" data-page="projects">Projects</a>
+    <a href="/Public/About.html" data-page="about">About</a>
+    <a href="/Public/Contact.html" data-page="contact">Contact</a>
+  </div>
 
-     <a href="Contact.html" class="nav-cta">Get in touch</a>
+  <!-- Desktop CTA -->
+  <a class="nav-cta" href="/Public/Contact.html">Get in touch</a>
+
+  <!-- Hamburger (mobile only) -->
+  <button class="nav-hamburger" onclick="toggleMobileNav()" aria-expanded="false" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- Mobile drawer -->
+<div id="nav-mobile">
+  <a href="/Public/Index.html" data-page="home">Home</a>
+  <a href="/Public/Projects.html" data-page="projects">Projects</a>
+  <a href="/Public/About.html" data-page="about">About</a>
+  <a href="/Public/Contact.html" data-page="contact">Contact</a>
+  <a class="nav-cta" href="/Public/Contact.html">Get in touch</a>
+</div>
+</nav>
+
 
  <main id="page-about" class="page about-page">
  
@@ -135,7 +155,7 @@ NAV BAR
     </div>
 
 
- <!-- Footer -->
+  <!-- Footer -->
 <footer class="footer">
 
   <div class="footer-top">
@@ -179,19 +199,19 @@ NAV BAR
       <ul class="footer-links">
 
         <li>
-          <a href="Index.html">Home</a>
+          <a href="/Public/Index.html">Home</a>
         </li>
 
         <li>
-          <a href="Projects.html">Projects</a>
+          <a href="/Public/Projects.html">Projects</a>
         </li>
 
         <li>
-          <a href="About.html">About</a>
+          <a href="/Public/About.html">About</a>
         </li>
 
         <li>
-          <a href="Contact.html">Contact</a>
+          <a href="/Public/Contact.html">Contact</a>
         </li>
 
       </ul>
@@ -239,11 +259,9 @@ NAV BAR
   </div>
 
 </footer>
- 
-  </main>
 
-  <script src="main.js"></script>
+</main>
 
-  </body>
+<script src="/Public/main.js"></script>
+</body>
 </html>
- 

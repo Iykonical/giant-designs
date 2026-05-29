@@ -284,6 +284,81 @@ textarea {
   color: #0f0f0f;
 }
 
+/* ── Hide hamburger on desktop ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.nav.dark .nav-hamburger span {
+  background: #fff;
+}
+
+/* ── Mobile drawer ── */
+#nav-mobile {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 0.5px solid #ece9e4;
+  padding: 1.5rem 2.5rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 99;
+}
+
+#nav-mobile.open {
+  display: flex;
+}
+
+#nav-mobile a {
+  font-size: 15px;
+  color: #555;
+  transition: color var(--transition);
+}
+
+#nav-mobile a:hover,
+#nav-mobile a.active {
+  color: #1a1a1a;
+}
+
+#nav-mobile .nav-cta {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ── Breakpoint ── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
 /* =========================================================
    HOMEPAGE — HERO
    ========================================================= */
@@ -936,21 +1011,22 @@ MOBILE
   border: var(--border);
   border-radius: var(--radius-md);
   height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
   overflow: hidden;
+  position: relative;
 }
 
 .about-strip-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   border-radius: var(--radius-md);
+  display: block;
 }
 
+.about-strip-img span {
+  display: contents; /* neutralises the span so it doesn't break flex layout */
+}
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -1219,7 +1295,7 @@ MOBILE
 }
 
 .detail-sidebar {
-  position: sticky;
+  position: static;
   top: 96px;
 }
 
@@ -1242,6 +1318,7 @@ MOBILE
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
+  position: static;
 }
 
 .material-swatch {
@@ -1733,7 +1810,7 @@ MOBILE
 }
 
 .architect-photo-wrap {
-  position: sticky;
+  position: static;
   top: 96px;
 }
 
