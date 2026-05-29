@@ -1106,7 +1106,8 @@ MOBILE
   font-size: 30px;
 }
 
-.filter-tabs {
+@media (max-width: 768px) {
+  .filter-tabs {
   display: flex;
   gap: 0;
   border-bottom: 0.5px solid #e5e3df;
@@ -1115,7 +1116,14 @@ MOBILE
   position: sticky;
   top: 64px;
   z-index: 50;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  scrollbar-width: none; /* hide scrollbar on Firefox */
 }
+.filter-tabs::-webkit-scrollbar {
+  display: none; /* hide scrollbar on Chrome/Safari */
+}
+
 
 .filter-tab {
   padding: 14px 1.25rem;
@@ -1127,7 +1135,10 @@ MOBILE
     color var(--transition),
     border-color var(--transition);
   white-space: nowrap;
+  flex-shrink: 0;
 }
+}
+
 
 .filter-tab:hover {
   color: #1a1a1a;
