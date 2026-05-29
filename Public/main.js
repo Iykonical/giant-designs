@@ -589,9 +589,9 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 function currentPage() {
   const path = window.location.pathname.toLowerCase();
   if (path.includes("contact")) return "contact";
+  if (path.includes("project-detail")) return "project-detail"; // before "projects"
   if (path.includes("projects")) return "projects";
   if (path.includes("about")) return "about";
-  if (path.includes("project")) return "project-detail";
   return "index";
 }
 

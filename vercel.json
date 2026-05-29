@@ -1,8 +1,7 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/Public/Index.html"
-    }
+    { "source": "/Public/:file", "destination": "/Public/:file" },
+    { "source": "/Assets/:path*", "destination": "/Assets/:path*" },
+    { "source": "/", "destination": "/Public/Index.html" }
   ]
 }
