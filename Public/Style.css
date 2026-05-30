@@ -706,11 +706,19 @@ MOBILE
 /* --- Featured ticker bar --- */
 .featured-bar {
   background: var(--gold);
-  padding: 11px 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  padding: 11px 0;
   overflow: hidden;
+  white-space: nowrap;
+}
+
+.featured-bar-track {
+  display: inline-flex;
+  gap: 1.5rem;
+  animation: ticker 18s linear infinite;
+}
+
+.featured-bar:hover .featured-bar-track {
+  animation-play-state: paused;
 }
 
 .featured-bar span {
@@ -725,6 +733,11 @@ MOBILE
 .featured-bar .sep {
   color: var(--dark);
   opacity: 0.35;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* =========================================================
@@ -1089,6 +1102,31 @@ MOBILE
   color: var(--gray-3);
 }
 
+.footer-watermark {
+  font-size: 11px;
+  color: #2a2a2a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+}
+
+.footer-watermark:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 /* =========================================================
    PAGE — PROJECTS
    ========================================================= */
@@ -1106,8 +1144,8 @@ MOBILE
   font-size: 30px;
 }
 
-@media (max-width: 768px) {
-  .filter-tabs {
+/* Base styles — all screen sizes */
+.filter-tabs {
   display: flex;
   gap: 0;
   border-bottom: 0.5px solid #e5e3df;
@@ -1116,14 +1154,7 @@ MOBILE
   position: sticky;
   top: 64px;
   z-index: 50;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-  scrollbar-width: none; /* hide scrollbar on Firefox */
 }
-.filter-tabs::-webkit-scrollbar {
-  display: none; /* hide scrollbar on Chrome/Safari */
-}
-
 
 .filter-tab {
   padding: 14px 1.25rem;
@@ -1135,10 +1166,7 @@ MOBILE
     color var(--transition),
     border-color var(--transition);
   white-space: nowrap;
-  flex-shrink: 0;
 }
-}
-
 
 .filter-tab:hover {
   color: #1a1a1a;
@@ -1148,6 +1176,26 @@ MOBILE
   color: #1a1a1a;
   font-weight: 500;
   border-bottom-color: var(--gold);
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .filter-tabs {
+    padding: 0 1.25rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    padding: 14px 1rem;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
 }
 
 .projects-full-grid {
