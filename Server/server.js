@@ -5,7 +5,9 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
-const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const app = express();
 
@@ -17,33 +19,19 @@ app.use(cors({
     "https://giant-designs.vercel.app",
     "http://127.0.0.1:5500",
     "http://localhost:5500"
-  ],
+  ]
 }));
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
 
 /* ============================================================
-   MAILER
-   ============================================================ */
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // TLS
-  family: 4, // IPv4
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-/* ============================================================
    EMAIL SERVICES
    ============================================================ */
 async function sendAdminEmail(data) {
-  return transporter.sendMail({
-    from: `"Giant Designs" <${process.env.EMAIL_USER}>`,
+  return sgMail.send({
     to: process.env.EMAIL_USER,
+    from: process.env.EMAIL_USER,
     subject: `New Lead: ${data.name}`,
     html: `
       <div style="font-family:Arial;padding:20px">
@@ -61,9 +49,9 @@ async function sendAdminEmail(data) {
 }
 
 async function sendAutoReply(data) {
-  return transporter.sendMail({
-    from: `"Giant Designs" <${process.env.EMAIL_USER}>`,
+  return sgMail.send({
     to: data.email,
+    from: process.env.EMAIL_USER,
     subject: "We received your message — Giant Designs",
     html: `
       <div style="font-family:Arial;padding:20px">
