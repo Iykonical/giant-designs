@@ -1105,26 +1105,32 @@ function handleContactSubmit(e) {
 
   btn.innerHTML = "Sending...";
 
-  fetch("http://localhost:5000/api/contact", {
+  fetch("https://giant-designs.onrender.com/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((res) => {
-      if (res.success) {
-        btn.innerHTML = "Message sent ✓";
-        form.reset();
-        setTimeout(() => {
-          btn.innerHTML = "Send message";
-        }, 2000);
-      } else {
-        btn.innerHTML = "Try again";
-      }
-    })
-    .catch(() => {
-      btn.innerHTML = "Error sending message";
-    });
+ .then((res) => {
+  if (res.success) {
+    btn.innerHTML = "Message sent ✓";
+    form.reset();
+    setTimeout(() => {
+      btn.innerHTML = "Send message";
+    }, 2000);
+  } else {
+    btn.innerHTML = "Try again";
+    setTimeout(() => {
+      btn.innerHTML = "Send message";
+    }, 2000);
+  }
+})
+.catch(() => {
+  btn.innerHTML = "Error sending message";
+  setTimeout(() => {
+    btn.innerHTML = "Send message";
+  }, 2000);
+});
 }
 
 function initContactPage() {
