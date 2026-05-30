@@ -657,44 +657,7 @@ function goToProject(id) {
 /* ============================================================
    INDEX.HTML — Hero slider + featured projects
    ============================================================ */
-const HeroSlider = {
-  index: 0,
-  total: 0,
-  timer: null,
-  init() {
-    const slides = $$(".hero-slide");
-    this.total = slides.length;
-    if (!this.total) return;
-    this.go(0);
-    this.timer = setInterval(() => this.next(), 4500);
-    $$(".hero-dot").forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        this.go(i);
-        this.reset();
-      });
-    });
-  },
-  go(i) {
-    this.index = i;
-    $$(".hero-slide").forEach((s, idx) =>
-      s.classList.toggle("active", idx === i),
-    );
-    $$(".hero-dot").forEach((d, idx) => {
-      d.classList.toggle("active", idx === i);
-      d.setAttribute("aria-selected", idx === i);
-    });
-  },
-  next() {
-    this.go((this.index + 1) % this.total);
-  },
-  prev() {
-    this.go((this.index - 1 + this.total) % this.total);
-  },
-  reset() {
-    clearInterval(this.timer);
-    this.timer = setInterval(() => this.next(), 4500);
-  },
-};
+
 
 function renderHomeProjects() {
   const grid = $("#home-projects-grid");
@@ -793,6 +756,39 @@ function initHeroSlider() {
 
   showSlide(0);
   start();
+}
+
+/* ============================================================
+   INIT COUNTERS (Index page)
+   ============================================================ */
+   function initCounters() {
+  const counters = $$(".stat-num[data-target]");
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || "";
+      const duration = 1800;
+      const steps = 60;
+      const increment = target / steps;
+      let current = 0;
+      let step = 0;
+
+      const timer = setInterval(() => {
+        step++;
+        current = Math.min(Math.round(increment * step), target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(timer);
+      }, duration / steps);
+
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach((el) => observer.observe(el));
 }
 
 /* ============================================================
@@ -1221,6 +1217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (page === "index") {
     initHeroSlider();
     renderHomeProjects();
+    initCounters();
   }
 
   if (page === "projects") {
@@ -1254,7 +1251,4 @@ window.lightboxNext = lightboxNext;
 window.lightboxPrev = lightboxPrev;
 window.changeMainImage = changeMainImage;
 window.toggleMobileNav = toggleMobileNav;
-window.setHeroSlide = (i) => {
-  HeroSlider.go(i);
-  HeroSlider.reset();
-};
+
