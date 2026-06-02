@@ -1,9 +1,7 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/Assets/(.*)", "destination": "/Assets/$1" },
-    { "source": "/Public/(.*)", "destination": "/Public/$1" },
     { "source": "/", "destination": "/Public/Index.html" },
     { "source": "/(.*)", "destination": "/Public/$1" }
-  ],
-  "cleanUrls": true
+  ]
 }
