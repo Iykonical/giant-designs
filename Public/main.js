@@ -478,6 +478,10 @@ const PROJECTS = [
       "/Assets/Imgs/Gallery/BLD1.png",
       "/Assets/Imgs/Gallery/BLD2.png",
       "/Assets/Imgs/Gallery/BLD3.png",
+      "/Assets/Imgs/Madubi Extras/WhatsApp Image 2026-06-19 at 5.27.22 PM.jpeg",
+      "/Assets/Imgs/Madubi Extras/WhatsApp Image 2026-06-19 at 5.46.03 PM.jpeg",
+      "/Assets/Imgs/Madubi Extras/WhatsApp Image 2026-06-19 at 5.46.04 PM (1).jpeg",
+      "/Assets/Imgs/Madubi Extras/WhatsApp Image 2026-06-19 at 5.46.04 PM.jpeg",
     ],
     galleryCount: 5,
     hasConstruction: true,
@@ -489,7 +493,7 @@ const PROJECTS = [
       { label: "Finishing works", done: false },
       { label: "Final handover", done: false },
     ],
-    sitePhotosCount: 3,
+    sitePhotosCount: 7,
   },
   {
     id: "ahuike",
@@ -586,6 +590,131 @@ const PROJECTS = [
     galleryCount: 4,
     hasConstruction: false,
   },
+  {
+    id: "NEAT",
+    num: "07",
+    images: [
+      "/Assets/Imgs/NEAT/WhatsApp Image 2026-06-19 at 5.38.22 PM (1).jpeg",
+      "/Assets/Imgs/NEAT/WhatsApp Image 2026-06-19 at 5.38.22 PM.jpeg",
+      "/Assets/Imgs/NEAT/WhatsApp Image 2026-06-19 at 5.44.08 PM.jpeg",
+    ],
+    name: "NEAT",
+    subtitle: "LUXURY CAR WASH AND LAUNDRY",
+    location: "Abuja, Nigeria",
+    plotSize: "800 SQM",
+    type: "Commercial",
+    status: "construction",
+    statusLabel: "Under Construction",
+    cat: ["commercial"],
+    desc: "NEAT is a premium car wash and laundry facility that redefines convenience, quality, and customer experience. The design features a sleek, modern facade with a spacious interior layout for efficient service delivery and a comfortable waiting area.",
+    highlights: [
+      "Sleek modern design",
+      "Efficient layout",
+      "Premium customer experience",
+      "Sustainable features",
+    ],
+    style: "Contemporary · Sleek · Functional",
+    materials: [
+      {
+        name: "Textured Concrete",
+        image: "/Assets/Imgs/Materials/Textured Concrete.jpg",
+      },
+      {
+        name: "Metal Cladding",
+        image: "/Assets/Imgs/Materials/Metal Finish.jpg",
+      },
+      {
+        name: "Glass Curtain Wall",
+        image: "/Assets/Imgs/Materials/Glass Balustrade.jpg",
+      },
+      {
+        name: "Aluminium Louvres",
+        image: "/Assets/Imgs/Materials/Aluminium louvres.avif",
+      },
+    ],
+    drawings: [
+      {
+        image:
+          "/Assets/Imgs/NEAT/WhatsApp Image 2026-06-19 at 5.38.22 PM (1).jpeg",
+        title: "Complete 3d renders",
+        desc: "Exterior visualisations showing the sleek design and layout",
+      },
+      {
+        image: "/Assets/Imgs/NEAT/WhatsApp Image 2026-06-19 at 5.38.22 PM.jpeg",
+        title: "Exterior Views",
+        desc: "Various exterior angles and perspectives of the building",
+      },
+    ],
+    tags: ["3d renders"],
+    galleryCount: 3,
+    hasConstruction: true,
+    constructionProgress: 40,
+    stages: [
+      { label: "Foundation completed", done: true },
+      { label: "Structural frame in progress", done: true },
+    ],
+  },
+  {
+    id: "KYAU",
+    num: "08",
+    images: ["/Assets/Imgs/KYAU/WhatsApp Image 2026-06-19 at 5.46.09 PM.jpeg"],
+    name: "KYAU",
+    subtitle: "4 BEDROOM DUPLEX WITH 1 BOYS QUARTERS",
+    location: "Abuja, Nigeria",
+    plotSize: "950 SQM",
+    type: "Residential",
+    status: "construction",
+    statusLabel: "Under Construction",
+    cat: ["residential"],
+    desc: "KYAU is a contemporary residential duplex that combines modern aesthetics with functional design. The layout includes 4 bedrooms, a spacious living area, and a separate boys' quarters.",
+    highlights: [
+      "Contemporary design",
+      "Functional layout",
+      "Spacious living areas",
+      "Sustainable features",
+    ],
+    style: "Contemporary · Functional · Elegant",
+    materials: [
+      {
+        name: "Textured Concrete",
+        image: "/Assets/Imgs/Materials/Textured Concrete.jpg",
+      },
+      {
+        name: "Metal Cladding",
+        image: "/Assets/Imgs/Materials/Metal Finish.jpg",
+      },
+      {
+        name: "Glass Balustrade",
+        image: "/Assets/Imgs/Materials/Glass Balustrade.jpg",
+      },
+      {
+        name: "Aluminium Louvres",
+        image: "/Assets/Imgs/Materials/Aluminium louvres.avif",
+      },
+    ],
+    drawings: [
+      {
+        image: "/Assets/Imgs/KYAU/WhatsApp Image 2026-06-19 at 5.46.09 PM.jpeg",
+        title: "Complete 3d renders",
+        desc: "Exterior visualisations showing the sleek design and layout",
+      },
+    ],
+    tags: ["3d renders"],
+    galleryCount: 1,
+    hasConstruction: true,
+    constructionProgress: 78,
+    stages: [
+      { label: "Foundation completed", done: true },
+      { label: "Structural frame in progress", done: true },
+      { label: "Blockwork in progress", done: false },
+      { label: "Finishing works", done: false },
+    ],
+    sitePhotos: [
+      "/Assets/Imgs/KYAU/WhatsApp Image 2026-06-19 at 5.46.08 PM (1).jpeg",
+      "/Assets/Imgs/KYAU/WhatsApp Image 2026-06-19 at 5.46.08 PM.jpeg",
+    ],
+    sitePhotosCount: 2,
+  },
 ];
 
 /* ============================================================
@@ -657,7 +786,6 @@ function goToProject(id) {
 /* ============================================================
    INDEX.HTML — Hero slider + featured projects
    ============================================================ */
-
 
 function renderHomeProjects() {
   const grid = $("#home-projects-grid");
@@ -761,32 +889,35 @@ function initHeroSlider() {
 /* ============================================================
    INIT COUNTERS (Index page)
    ============================================================ */
-   function initCounters() {
+function initCounters() {
   const counters = $$(".stat-num[data-target]");
   if (!counters.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.target);
-      const suffix = el.dataset.suffix || "";
-      const duration = 1800;
-      const steps = 60;
-      const increment = target / steps;
-      let current = 0;
-      let step = 0;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1800;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        let step = 0;
 
-      const timer = setInterval(() => {
-        step++;
-        current = Math.min(Math.round(increment * step), target);
-        el.textContent = current + suffix;
-        if (current >= target) clearInterval(timer);
-      }, duration / steps);
+        const timer = setInterval(() => {
+          step++;
+          current = Math.min(Math.round(increment * step), target);
+          el.textContent = current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, duration / steps);
 
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.5 });
+        observer.unobserve(el);
+      });
+    },
+    { threshold: 0.5 },
+  );
 
   counters.forEach((el) => observer.observe(el));
 }
@@ -1115,26 +1246,26 @@ function handleContactSubmit(e) {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
- .then((res) => {
-  if (res.success) {
-    btn.innerHTML = "Message sent ✓";
-    form.reset();
-    setTimeout(() => {
-      btn.innerHTML = "Send message";
-    }, 2000);
-  } else {
-    btn.innerHTML = "Try again";
-    setTimeout(() => {
-      btn.innerHTML = "Send message";
-    }, 2000);
-  }
-})
-.catch(() => {
-  btn.innerHTML = "Error sending message";
-  setTimeout(() => {
-    btn.innerHTML = "Send message";
-  }, 2000);
-});
+    .then((res) => {
+      if (res.success) {
+        btn.innerHTML = "Message sent ✓";
+        form.reset();
+        setTimeout(() => {
+          btn.innerHTML = "Send message";
+        }, 2000);
+      } else {
+        btn.innerHTML = "Try again";
+        setTimeout(() => {
+          btn.innerHTML = "Send message";
+        }, 2000);
+      }
+    })
+    .catch(() => {
+      btn.innerHTML = "Error sending message";
+      setTimeout(() => {
+        btn.innerHTML = "Send message";
+      }, 2000);
+    });
 }
 
 function initContactPage() {
@@ -1251,4 +1382,3 @@ window.lightboxNext = lightboxNext;
 window.lightboxPrev = lightboxPrev;
 window.changeMainImage = changeMainImage;
 window.toggleMobileNav = toggleMobileNav;
-
