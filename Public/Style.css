@@ -1204,6 +1204,80 @@ MOBILE
   gap: 20px;
 }
 
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.lightbox.open{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90vw;
+    max-height:90vh;
+    object-fit:contain;
+}
+
+.lightbox-close{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    border:none;
+    background:none;
+
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+}
+
+#lightbox-caption{
+    position:absolute;
+    bottom:30px;
+    color:white;
+    font-size:14px;
+}
+
+.alternatives-section{
+    padding:5rem 0;
+    border-top:1px solid #ece9e4;
+}
+
+.alternatives-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:16px;
+}
+
+.alternative-card{
+    border-radius:14px;
+    overflow:hidden;
+    cursor:pointer;
+    background:#f8f8f8;
+    transition:.3s ease;
+}
+
+.alternative-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+    transition:transform .4s ease;
+}
+
+.alternative-card:hover img{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
 /* =========================================================
    PAGE — PROJECT DETAIL
    ========================================================= */

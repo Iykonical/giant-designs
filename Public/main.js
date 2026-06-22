@@ -104,10 +104,13 @@ const PROJECTS = [
       "/Assets/Imgs/Gallery/WhatsApp Image 2026-05-27 at 11.16.37 PM.jpeg",
       "/Assets/Imgs/Gallery/WhatsApp Image 2026-05-27 at 11.16.38 PM (1).jpeg",
       "/Assets/Imgs/Gallery/WhatsApp Image 2026-05-27 at 11.16.38 PM.jpeg",
+      "/Assets/Imgs/AKU Updates/WhatsApp Image 2026-06-20 at 7.59.51 PM (1).jpeg",
+      "/Assets/Imgs/AKU Updates/WhatsApp Image 2026-06-20 at 7.59.51 PM (2).jpeg",
+      "/Assets/Imgs/AKU Updates/WhatsApp Image 2026-06-20 at 7.59.51 PM.jpeg",
     ],
     galleryCount: 6,
     hasConstruction: true,
-    constructionProgress: 55,
+    constructionProgress: 65,
     stages: [
       { label: "Foundation completed", done: true },
       { label: "Structural frame in progress", done: true },
@@ -195,7 +198,7 @@ const PROJECTS = [
       },
     ],
     galleryCount: 4,
-    constructionProgress: 70,
+    constructionProgress: 60,
     hasConstruction: true,
     stages: [
       { label: "Foundation completed", done: true },
@@ -203,6 +206,10 @@ const PROJECTS = [
       { label: "Blockwork done", done: true },
       { label: "Finishing works in progress", done: false },
       { label: "Final handover", done: false },
+    ],
+    sitePhotos: [
+      "/Assets/Imgs/ULO Updates/WhatsApp Image 2026-06-22 at 10.08.48 AM.jpeg",
+      "/Assets/Imgs/ULO Updates/WhatsApp Image 2026-06-22 at 10.09.10 AM.jpeg",
     ],
   },
   {
@@ -373,6 +380,13 @@ const PROJECTS = [
       },
     ],
     galleryCount: 5,
+    alternatives: [
+      "/Assets/Imgs/TARE Alternatives/WhatsApp Image 2026-06-19 at 5.35.40 PM.jpeg",
+      "/Assets/Imgs/TARE Alternatives/WhatsApp Image 2026-06-19 at 5.46.05 PM.jpeg",
+      "/Assets/Imgs/TARE Alternatives/WhatsApp Image 2026-06-19 at 5.46.06 PM (1).jpeg",
+      "/Assets/Imgs/TARE Alternatives/WhatsApp Image 2026-06-19 at 5.46.06 PM.jpeg",
+      "/Assets/Imgs/TARE Alternatives/WhatsApp Image 2026-06-19 at 5.46.07 PM.jpeg",
+    ],
     hasConstruction: true,
     constructionProgress: 68,
     stages: [
@@ -600,7 +614,7 @@ const PROJECTS = [
     ],
     name: "NEAT",
     subtitle: "LUXURY CAR WASH AND LAUNDRY",
-    location: "Abuja, Nigeria",
+    location: "Jos, Nigeria",
     plotSize: "800 SQM",
     type: "Commercial",
     status: "construction",
@@ -1077,6 +1091,53 @@ function renderDetailPage() {
     `;
   }
 
+  // Alternative images for lightbox (if any)
+  let alternativesHTML = "";
+
+  if (p.alternatives && p.alternatives.length) {
+    const alternativesGrid = p.alternatives
+      .map(
+        (img, i) => `
+    <div class="alternative-card"
+         onclick="openOtherImage(this)">
+      <img src="${img}" alt="Alternative ${i + 1}">
+    </div>
+  `,
+      )
+      .join("");
+
+    alternativesHTML = `
+    <section class="alternatives-section">
+
+      <div class="container">
+
+        <div class="section-label">
+          Concept Development
+        </div>
+
+        <h2 class="section-title">
+           Alternatives to TARE
+        </h2>
+
+        <p class="concept-text"
+        style="max-width:800px;margin-bottom:2rem;">
+        Before arriving at the final TARE scheme, multiple design
+        alternatives were explored to study massing, facade composition,
+        material expression and spatial identity. These concepts
+        represent different architectural directions considered during
+        the design process.
+        </p>
+
+        <div class="alternatives-grid">
+          ${alternativesGrid}
+        </div>
+
+      </div>
+
+    </section>
+  `;
+  }
+
   /* ── Working drawings ── */
   const drawingsHTML = p.drawings
     .map(
@@ -1149,6 +1210,9 @@ function renderDetailPage() {
       </div>
       <div class="gallery-grid">${galleryHTML}</div>
     </section>
+    
+     <!-- Design alternatives (if any) -->
+    ${alternativesHTML}
 
     <!-- Construction progress (under-construction projects only) -->
     ${constructionHTML}
@@ -1336,6 +1400,17 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") Lightbox.next();
   if (e.key === "ArrowLeft") Lightbox.prev();
 });
+
+function openOtherImage(el) {
+  const img = el.querySelector("img");
+  if (!img) return;
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = lightbox.querySelector("img");
+
+  lightboxImg.src = img.src;
+  lightbox.classList.add("open");
+}
 
 /* ============================================================
    BOOT

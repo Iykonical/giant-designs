@@ -90,11 +90,11 @@ PAGE: PROJECTS
     <h2 class="section-title" style="margin-bottom:1.5rem">Others</h2>
     <p style="font-size:13px;color:#888;max-width:480px;margin-bottom:2rem">A collection of contemporary designs that reflect our commitment to innovation, functionality and aesthetic excellence.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM (1).jpeg"></div>
-        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (1).jpeg"></div>
-        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM.jpeg"></div>
-        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (2).jpeg"></div>
-        <div class="site-photo" style="height:180px;border-radius:8px"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM.jpeg"></div>
+      <div class="site-photo" onclick="openOtherImage(this)"style="cursor:pointer"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM (1).jpeg"></div>
+        <div class="site-photo"onclick="openOtherImage(this)"style="cursor:pointer"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (1).jpeg"></div>
+        <div class="site-photo"onclick="openOtherImage(this)"style="cursor:pointer"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.35 PM.jpeg"></div>
+        <div class="site-photo"onclick="openOtherImage(this)"style="cursor:pointer"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM (2).jpeg"></div>
+        <div class="site-photo"onclick="openOtherImage(this)"style="cursor:pointer"><i class="ti ti-photo" aria-hidden="true" style="font-size:32px"></i><img src="/Assets/Imgs/3d Building/WhatsApp Image 2026-05-27 at 11.19.36 PM.jpeg"></div>
     </div>
     </section>
 
@@ -204,6 +204,18 @@ PAGE: PROJECTS
 </footer>
 
 </main>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <i class="ti ti-x"></i>
+  </button>
+
+  <img src="" alt="Preview">
+
+  <div id="lightbox-caption"></div>
+
+</div>
 
 <script src="/Public/main.js"></script>
 </body>
